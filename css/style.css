@@ -13,7 +13,7 @@ a {
     content: '';
     height: 100vh;
     width: 100%;
-    background-image: url(./mac-coffee-bw.jpg);
+    background-image: url(../img/mac-coffee-bw.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -94,6 +94,16 @@ a {
 .bg-dark {
     background: #333;
     color: #f4f4f4;
+}
+
+.bg-dark_yellow {
+    background: #7F6421;
+    color: #FFFEFE;
+}
+
+.bg-light_yellow {
+    background: #FFFEFE;
+    color: #7F6421;
 }
 
 footer {
