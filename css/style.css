@@ -151,6 +151,10 @@ a:hover {
     color: #f4f4f4;
 }
 
+.icon {
+    height: 18px;
+}
+
 footer {
     padding: 2.2rem;
 }
