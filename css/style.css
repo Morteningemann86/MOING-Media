@@ -7,6 +7,11 @@ body {
 
 a {
     color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
 }
 
 .showcase::after {
@@ -33,6 +38,56 @@ a {
     -webkit-filter: blur(2px);
 }
 
+/* Header picture blur for "About" page */
+.showcase-about::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/buildings.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase-about:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.showcase-about:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+/*Header picture blur for "Chatbot" page */
+.showcase-chatbot::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/board.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase-chatbot:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.showcase-chatbot:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
 .content {
     position: absolute;
     z-index: 1;
@@ -41,7 +96,7 @@ a {
     margin-top: 105px;
     margin-left: -145px;
     width: 300px;
-    height: 350px;
+    height: 300px;
     text-align: center;
     transition: all 1000ms;
 }
@@ -96,16 +151,6 @@ a {
     color: #f4f4f4;
 }
 
-.bg-dark_yellow {
-    background: #7F6421;
-    color: #FFFEFE;
-}
-
-.bg-light_yellow {
-    background: #FFFEFE;
-    color: #7F6421;
-}
-
 footer {
     padding: 2.2rem;
 }
@@ -120,41 +165,53 @@ footer p {
         height: 50vh;
     }
 
-    .content {
-        top: 5%;
-        margin-top: 5px;
-    }
+    /* "showcase-about" on small screens */
+    @media (max-width: 560px) {
+        .showcase-about::after {
+            height: 50vh;
+        }
 
-    .content .logo {
-        height: 140px;
-        width: 140px;
-        filter: invert(40);
-    }
+        /* "showcase-chatbot" on small screens */
+        @media (max-width: 560px) {
+            .showcase-chatbot::after {
+                height: 50vh;
+            }
 
-    .content .text {
-        display: none;
-    }
+            .content {
+                top: 5%;
+                margin-top: 5px;
+            }
 
-    .grid-3,
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
+            .content .logo {
+                height: 140px;
+                width: 140px;
+                filter: invert(40);
+            }
 
-    .services div {
-        border-bottom: #333 dashed 1px;
-        padding: 1.2rem 1rem;
-    }
-}
+            .content .text {
+                display: none;
+            }
 
-/* Landscape */
-@media (max-height: 500px) {
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
 
-    .content .title,
-    .content .text {
-        display: none;
-    }
+            .services div {
+                border-bottom: #333 dashed 1px;
+                padding: 1.2rem 1rem;
+            }
+        }
 
-    .content {
-        top: 0;
-    }
-}
+        /* Landscape */
+        @media (max-height: 500px) {
+
+            .content .title,
+            .content .text {
+                display: none;
+            }
+
+            .content {
+                top: 0;
+            }
+        }
