@@ -219,3 +219,10 @@ footer p {
                 top: 0;
             }
         }
+
+        @media (max-width: 560px) {
+            .header-text {
+                font-size: 8px;
+                padding-top: 50px
+            }
+        }
